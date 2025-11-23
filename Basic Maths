@@ -1,0 +1,47 @@
+//reversing the number 
+
+class Solution {
+public:
+    int reverse(int x) {
+         int rev =0;
+         int temp = x;
+         while(temp!=0){
+            int lastdigit = temp%10;
+            if((rev > INT_MAX/10|| rev <INT_MIN/10)){
+                return 0;
+            }else{
+                rev = (rev * 10) + lastdigit;
+                temp = temp/10;
+            }
+            
+         }
+    return rev;
+
+     }
+    
+};
+
+// check palindrome
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x<0){
+            return false;
+        }
+        int temp = x;
+        long long  rev = 0;
+
+       while(temp!=0){
+        int ld = temp%10;
+        temp = temp/10;
+        rev =(rev * 10) + ld;
+       }
+       if(rev==x){
+            return true;
+       }else{
+            return false;
+       }
+    }
+};
+
+
